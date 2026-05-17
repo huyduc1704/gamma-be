@@ -1,0 +1,75 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "System Setting",
+    "description": "Cấu hình hệ thống chung (Hotline, Zalo, Socials, Company Info)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hotline": {
+      "type": "string",
+      "required": true,
+      "default": "0827.972.555"
+    },
+    "zaloUrl": {
+      "type": "string",
+      "required": false
+    },
+    "messengerUrl": {
+      "type": "string",
+      "required": false
+    },
+    "tiktokUrl": {
+      "type": "string",
+      "required": false
+    },
+    "youtubeUrl": {
+      "type": "string",
+      "required": false
+    },
+    "facebookPage": {
+      "type": "string",
+      "required": false
+    },
+    "companyName": {
+      "type": "string",
+      "required": false,
+      "default": "CÔNG TY CỔ PHẦN KIẾN TRÚC VÀ XÂY DỰNG KITA HOME"
+    },
+    "taxCode": {
+      "type": "string",
+      "required": false
+    },
+    "slogan": {
+      "type": "string",
+      "required": false,
+      "default": "Tận tâm trong từng viên gạch – Vững trọn niềm tin trong từng mái nhà"
+    },
+    "addressList": {
+      "type": "text",
+      "required": false
+    },
+    "addressNorth": {
+      "type": "string",
+      "required": false
+    },
+    "addressSouth": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "string",
+      "required": false
+    },
+    "facebookUrl": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

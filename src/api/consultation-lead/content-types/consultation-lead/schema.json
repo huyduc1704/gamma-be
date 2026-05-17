@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultation_leads",
+  "info": {
+    "singularName": "consultation-lead",
+    "pluralName": "consultation-leads",
+    "displayName": "Consultation Lead",
+    "description": "Thông tin đăng ký nhận tư vấn và báo giá thiết kế từ khách hàng"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "requirement": {
+      "type": "string"
+    },
+    "areaAndFloors": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "detailNote": {
+      "type": "text"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "contacted",
+        "converted",
+        "cancelled"
+      ],
+      "default": "new",
+      "required": true
+    }
+  }
+}
