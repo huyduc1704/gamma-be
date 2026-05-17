@@ -621,7 +621,7 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
   collectionName: 'settings';
   info: {
     description: 'C\u1EA5u h\u00ECnh h\u1EC7 th\u1ED1ng chung (Hotline, Zalo, Socials, Company Info)';
-    displayName: 'System Setting';
+    displayName: 'Thi\u1EBFt l\u1EADp h\u1EC7 th\u1ED1ng';
     pluralName: 'settings';
     singularName: 'setting';
   };
