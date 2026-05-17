@@ -4,7 +4,7 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post",
+    "displayName": "Bài viết & Dự án",
     "description": "Bài viết chi tiết (Dịch vụ, Dự án, Nội thất, Tin tức...)"
   },
   "options": {

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "consultation-lead",
     "pluralName": "consultation-leads",
-    "displayName": "Consultation Lead",
+    "displayName": "Khách đăng ký tư vấn",
     "description": "Thông tin đăng ký nhận tư vấn và báo giá thiết kế từ khách hàng"
   },
   "options": {

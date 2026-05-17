@@ -481,7 +481,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: 'Danh m\u1EE5c b\u00E0i vi\u1EBFt (D\u1ECBch v\u1EE5, D\u1EF1 \u00E1n, Tin t\u1EE9c...)';
-    displayName: 'Category';
+    displayName: 'Danh m\u1EE5c ph\u00E2n lo\u1EA1i';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -514,7 +514,7 @@ export interface ApiConsultationLeadConsultationLead
   collectionName: 'consultation_leads';
   info: {
     description: 'Th\u00F4ng tin \u0111\u0103ng k\u00FD nh\u1EADn t\u01B0 v\u1EA5n v\u00E0 b\u00E1o gi\u00E1 thi\u1EBFt k\u1EBF t\u1EEB kh\u00E1ch h\u00E0ng';
-    displayName: 'Consultation Lead';
+    displayName: 'Kh\u00E1ch \u0111\u0103ng k\u00FD t\u01B0 v\u1EA5n';
     pluralName: 'consultation-leads';
     singularName: 'consultation-lead';
   };
@@ -553,7 +553,7 @@ export interface ApiHeroSlideHeroSlide extends Struct.CollectionTypeSchema {
   collectionName: 'hero_slides';
   info: {
     description: 'C\u00E1c h\u00ECnh \u1EA3nh slide tr\u00ECnh chi\u1EBFu n\u1ED5i b\u1EADt t\u1EA1i trang ch\u1EE7 c\u1EE7a website';
-    displayName: 'Hero Slide';
+    displayName: 'Banner trang ch\u1EE7';
     pluralName: 'hero-slides';
     singularName: 'hero-slide';
   };
@@ -589,7 +589,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
     description: 'B\u00E0i vi\u1EBFt chi ti\u1EBFt (D\u1ECBch v\u1EE5, D\u1EF1 \u00E1n, N\u1ED9i th\u1EA5t, Tin t\u1EE9c...)';
-    displayName: 'Post';
+    displayName: 'B\u00E0i vi\u1EBFt & D\u1EF1 \u00E1n';
     pluralName: 'posts';
     singularName: 'post';
   };

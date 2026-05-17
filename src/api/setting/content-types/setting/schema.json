@@ -4,7 +4,7 @@
   "info": {
     "singularName": "setting",
     "pluralName": "settings",
-    "displayName": "System Setting",
+    "displayName": "Thiết lập hệ thống",
     "description": "Cấu hình hệ thống chung (Hotline, Zalo, Socials, Company Info)"
   },
   "options": {

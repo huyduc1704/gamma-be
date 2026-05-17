@@ -4,7 +4,7 @@
   "info": {
     "singularName": "hero-slide",
     "pluralName": "hero-slides",
-    "displayName": "Hero Slide",
+    "displayName": "Banner trang chủ",
     "description": "Các hình ảnh slide trình chiếu nổi bật tại trang chủ của website"
   },
   "options": {

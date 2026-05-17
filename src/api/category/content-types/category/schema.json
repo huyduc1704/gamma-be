@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category",
+    "displayName": "Danh mục phân loại",
     "description": "Danh mục bài viết (Dịch vụ, Dự án, Tin tức...)"
   },
   "options": {
