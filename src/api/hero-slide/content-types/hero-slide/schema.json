@@ -8,7 +8,7 @@
     "description": "Các hình ảnh slide trình chiếu nổi bật tại trang chủ của website"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {

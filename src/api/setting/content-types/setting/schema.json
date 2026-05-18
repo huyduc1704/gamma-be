@@ -40,7 +40,7 @@
     "companyName": {
       "type": "string",
       "required": false,
-      "default": "CÔNG TY CỔ PHẦN KIẾN TRÚC VÀ XÂY DỰNG KITA HOME"
+      "default": "CÔNG TY CỔ PHẦN KIẾN TRÚC VÀ XÂY DỰNG GAMMA HOME"
     },
     "taxCode": {
       "type": "string",
@@ -70,6 +70,14 @@
     "facebookUrl": {
       "type": "string",
       "required": false
+    },
+    "feedbackImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
