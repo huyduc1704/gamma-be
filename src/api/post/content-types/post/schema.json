@@ -67,6 +67,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "customSpecifications": {
+      "type": "text"
     }
   }
 }

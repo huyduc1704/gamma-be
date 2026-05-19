@@ -602,6 +602,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    customSpecifications: Schema.Attribute.Text;
     detailsArea: Schema.Attribute.String;
     detailsClient: Schema.Attribute.String;
     detailsLocation: Schema.Attribute.String;
