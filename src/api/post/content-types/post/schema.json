@@ -44,6 +44,29 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "posts"
+    },
+    "detailsClient": {
+      "type": "string"
+    },
+    "detailsLocation": {
+      "type": "string"
+    },
+    "detailsScale": {
+      "type": "string"
+    },
+    "detailsArea": {
+      "type": "string"
+    },
+    "detailsYear": {
+      "type": "string"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
