@@ -24,6 +24,17 @@
     "description": {
       "type": "text"
     },
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "du-an",
+        "noi-that",
+        "dich-vu",
+        "tin-tuc",
+        "kien-thuc"
+      ],
+      "default": "du-an"
+    },
     "posts": {
       "type": "relation",
       "relation": "oneToMany",
