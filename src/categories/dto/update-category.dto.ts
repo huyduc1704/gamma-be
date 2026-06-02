@@ -1,5 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { IsBoolean, IsInt, IsOptional, IsString, Min } from 'class-validator';
+import { Type, Transform } from 'class-transformer';
 
 export class UpdateCategoryDto {
   @ApiPropertyOptional({ example: 'Xây Nhà Trọn Gói' })
@@ -15,10 +16,10 @@ export class UpdateCategoryDto {
   description?: string;
 
   @ApiPropertyOptional({ example: 1 })
-  @IsOptional() @IsInt() @Min(0)
+  @IsOptional() @Type(() => Number) @IsInt() @Min(0)
   order?: number;
 
   @ApiPropertyOptional({ example: true })
-  @IsOptional() @IsBoolean()
+  @IsOptional() @Transform(({ value }) => value === 'true' || value === true) @IsBoolean()
   isActive?: boolean;
 }

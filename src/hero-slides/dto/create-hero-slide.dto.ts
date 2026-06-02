@@ -1,5 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { IsBoolean, IsInt, IsOptional, IsString, Min } from 'class-validator';
+import { Type, Transform } from 'class-transformer';
 
 export class CreateHeroSlideDto {
   @ApiPropertyOptional({ example: 'THIẾT KẾ & THI CÔNG' })
@@ -23,10 +24,10 @@ export class CreateHeroSlideDto {
   ctaLink?: string;
 
   @ApiPropertyOptional({ example: 0 })
-  @IsOptional() @IsInt() @Min(0)
+  @IsOptional() @Type(() => Number) @IsInt() @Min(0)
   order?: number;
 
   @ApiPropertyOptional({ example: true })
-  @IsOptional() @IsBoolean()
+  @IsOptional() @Transform(({ value }) => value === 'true' || value === true) @IsBoolean()
   isActive?: boolean;
 }
