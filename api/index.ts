@@ -3,6 +3,8 @@ import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { apiReference } from '@scalar/nestjs-api-reference';
 import express, { Express } from 'express';
 import cookieParser = require('cookie-parser');
 import { AppModule } from '../src/app.module';
@@ -29,6 +31,15 @@ async function bootstrap(): Promise<Express> {
     origin: corsOrigin.includes(',') ? corsOrigin.split(',').map(o => o.trim()) : corsOrigin,
     credentials: true,
   });
+
+  const swaggerConfig = new DocumentBuilder()
+    .setTitle('Kita BE API')
+    .setDescription('API quản lý website Gamma Home')
+    .setVersion('1.0')
+    .addCookieAuth('access_token')
+    .build();
+  const document = SwaggerModule.createDocument(app, swaggerConfig);
+  app.use('/scalar', apiReference({ spec: { content: document } }));
 
   await app.init();
   cachedServer = expressApp;
