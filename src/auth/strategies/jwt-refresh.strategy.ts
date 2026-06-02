@@ -18,6 +18,7 @@ export class JwtRefreshStrategy extends PassportStrategy(Strategy, 'jwt-refresh'
     const opts: StrategyOptionsWithRequest = {
       jwtFromRequest: ExtractJwt.fromExtractors([
         (req: Request) => (req?.cookies as Record<string, string>)?.refresh_token ?? null,
+        (req: Request) => (req?.headers?.['x-refresh-token'] as string) ?? null,
       ]),
       secretOrKey: config.getOrThrow<string>('JWT_REFRESH_SECRET'),
       passReqToCallback: true,
@@ -26,7 +27,8 @@ export class JwtRefreshStrategy extends PassportStrategy(Strategy, 'jwt-refresh'
   }
 
   async validate(req: Request, payload: { sub: number }) {
-    const refreshToken = (req?.cookies as Record<string, string>)?.refresh_token;
+    const refreshToken = (req?.cookies as Record<string, string>)?.refresh_token
+      || (req?.headers?.['x-refresh-token'] as string);
     const admin = await this.adminRepo.findOne({ where: { id: payload.sub, isActive: true } });
     if (!admin || !admin.refreshToken) throw new UnauthorizedException();
 

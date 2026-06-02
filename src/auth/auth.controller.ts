@@ -43,7 +43,7 @@ export class AuthController {
     const { accessToken, refreshToken, admin } = await this.authService.login(dto);
     res.cookie('access_token', accessToken, cookieOptions(15 * 60 * 1000));
     res.cookie('refresh_token', refreshToken, cookieOptions(7 * 24 * 60 * 60 * 1000));
-    return { message: 'Đăng nhập thành công', admin };
+    return { message: 'Đăng nhập thành công', admin, accessToken, refreshToken };
   }
 
   @Post('refresh-token')
@@ -58,7 +58,7 @@ export class AuthController {
     const { accessToken, refreshToken } = await this.authService.refreshTokens(req.user.id);
     res.cookie('access_token', accessToken, cookieOptions(15 * 60 * 1000));
     res.cookie('refresh_token', refreshToken, cookieOptions(7 * 24 * 60 * 60 * 1000));
-    return { message: 'Làm mới token thành công' };
+    return { message: 'Làm mới token thành công', accessToken, refreshToken };
   }
 
   @Post('logout')
