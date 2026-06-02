@@ -22,8 +22,10 @@ import { UploadModule } from './upload/upload.module';
         username: config.get('DB_USERNAME'),
         password: config.get('DB_PASSWORD'),
         database: config.get('DB_NAME'),
+        ssl: config.get('DB_SSL') === 'true' ? { rejectUnauthorized: false } : false,
+        extra: { max: 1 }, // giới hạn connection pool cho serverless
         autoLoadEntities: true,
-        synchronize: true, // chỉ dùng dev, production dùng migrations
+        synchronize: true,
       }),
     }),
     AuthModule,
