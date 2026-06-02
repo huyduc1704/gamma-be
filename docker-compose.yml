@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: kita_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: kita_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - kita_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  kita_postgres_data:
