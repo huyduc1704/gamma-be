@@ -2,6 +2,7 @@ import {
   Controller, Get, Post, Put, Delete,
   Body, Param, ParseIntPipe, Query,
   UseGuards, UseInterceptors, UploadedFile,
+  HttpCode, HttpStatus,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiTags, ApiOperation, ApiCookieAuth, ApiConsumes, ApiBody, ApiQuery } from '@nestjs/swagger';
@@ -62,6 +63,7 @@ export class CategoriesController {
 
   @Put('reorder')
   @UseGuards(JwtAuthGuard)
+  @HttpCode(HttpStatus.NO_CONTENT)
   @ApiCookieAuth('access_token')
   @ApiOperation({ summary: 'Kéo thả sắp xếp thứ tự danh mục' })
   reorder(@Body() dto: ReorderCategoriesDto) {

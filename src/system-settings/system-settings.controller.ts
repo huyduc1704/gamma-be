@@ -2,6 +2,7 @@ import {
   Controller, Get, Put, Post, Delete,
   Body, Param, ParseIntPipe,
   UseGuards, UseInterceptors, UploadedFile,
+  HttpCode, HttpStatus,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiTags, ApiOperation, ApiCookieAuth, ApiConsumes, ApiBody } from '@nestjs/swagger';
@@ -87,6 +88,7 @@ export class SystemSettingsController {
 
   @Put('social-buttons/reorder')
   @UseGuards(JwtAuthGuard)
+  @HttpCode(HttpStatus.NO_CONTENT)
   @ApiCookieAuth('access_token')
   @ApiOperation({ summary: 'Sắp xếp lại thứ tự social buttons' })
   reorder(@Body() dto: ReorderSocialButtonsDto) {

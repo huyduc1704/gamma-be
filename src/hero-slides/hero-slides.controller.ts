@@ -2,6 +2,7 @@ import {
   Controller, Get, Post, Put, Delete,
   Body, Param, ParseIntPipe, Query,
   UseGuards, UseInterceptors, UploadedFile,
+  HttpCode, HttpStatus,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiTags, ApiOperation, ApiCookieAuth, ApiConsumes, ApiBody, ApiQuery } from '@nestjs/swagger';
@@ -60,6 +61,7 @@ export class HeroSlidesController {
 
   @Put('reorder')
   @UseGuards(JwtAuthGuard)
+  @HttpCode(HttpStatus.NO_CONTENT)
   @ApiCookieAuth('access_token')
   @ApiOperation({ summary: 'Sắp xếp lại thứ tự slides (kéo thả)' })
   reorder(@Body() dto: ReorderHeroSlidesDto) {
