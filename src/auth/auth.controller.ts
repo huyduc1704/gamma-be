@@ -8,8 +8,9 @@ import {
   Req,
   UseGuards,
   HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
-import { Response, Request } from 'express';
+import type { Response, Request } from 'express';
 import { ApiTags, ApiOperation, ApiBody, ApiCookieAuth } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
 import { AuthService } from './auth.service';
@@ -40,8 +41,8 @@ export class AuthController {
   @ApiBody({ type: LoginDto })
   async login(@Body() dto: LoginDto, @Res({ passthrough: true }) res: Response) {
     const { accessToken, refreshToken, admin } = await this.authService.login(dto);
-    res.cookie('access_token', accessToken, cookieOptions(15 * 60 * 1000));
-    res.cookie('refresh_token', refreshToken, cookieOptions(7 * 24 * 60 * 60 * 1000));
+    (res as any).cookie('access_token', accessToken, cookieOptions(15 * 60 * 1000));
+    (res as any).cookie('refresh_token', refreshToken, cookieOptions(7 * 24 * 60 * 60 * 1000));
     return { message: 'Đăng nhập thành công', admin, accessToken, refreshToken };
   }
 
@@ -55,8 +56,8 @@ export class AuthController {
     @Res({ passthrough: true }) res: Response,
   ) {
     const { accessToken, refreshToken } = await this.authService.refreshTokens(req.user.id);
-    res.cookie('access_token', accessToken, cookieOptions(15 * 60 * 1000));
-    res.cookie('refresh_token', refreshToken, cookieOptions(7 * 24 * 60 * 60 * 1000));
+    (res as any).cookie('access_token', accessToken, cookieOptions(15 * 60 * 1000));
+    (res as any).cookie('refresh_token', refreshToken, cookieOptions(7 * 24 * 60 * 60 * 1000));
     return { message: 'Làm mới token thành công', accessToken, refreshToken };
   }
 
@@ -70,8 +71,8 @@ export class AuthController {
     @Res({ passthrough: true }) res: Response,
   ) {
     await this.authService.logout(req.user.id);
-    res.clearCookie('access_token');
-    res.clearCookie('refresh_token');
+    (res as any).clearCookie('access_token');
+    (res as any).clearCookie('refresh_token');
     return { message: 'Đăng xuất thành công' };
   }
 
@@ -95,8 +96,8 @@ export class AuthController {
     @Res({ passthrough: true }) res: Response,
   ) {
     await this.authService.changePassword(req.user.id, dto);
-    res.clearCookie('access_token');
-    res.clearCookie('refresh_token');
+    (res as any).clearCookie('access_token');
+    (res as any).clearCookie('refresh_token');
     return { message: 'Đổi mật khẩu thành công, vui lòng đăng nhập lại' };
   }
 }

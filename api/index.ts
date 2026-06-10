@@ -37,5 +37,5 @@ async function bootstrap(): Promise<Express> {
 
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
   const server = await bootstrap();
-  server(req, res);
+  (server as any)(req, res);
 }
