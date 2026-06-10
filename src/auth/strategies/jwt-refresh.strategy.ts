@@ -4,7 +4,7 @@ import { ExtractJwt, Strategy, StrategyOptionsWithRequest } from 'passport-jwt';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import type { Request } from 'express';
+import { Request } from 'express';
 import * as bcrypt from 'bcryptjs';
 import { Admin } from '../../admin/entities/admin.entity';
 
