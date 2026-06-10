@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IsOptional, IsString } from 'class-validator';
+import { IsOptional, IsString, IsObject } from 'class-validator';
 
 export class UpdateSystemSettingDto {
   @ApiPropertyOptional({ example: 'GAMMA HOME' })
@@ -29,4 +29,20 @@ export class UpdateSystemSettingDto {
   @ApiPropertyOptional({ example: 'Đường T2-41 Vinhomes Grand Park, TP.Thủ Đức, HCM' })
   @IsOptional() @IsString()
   addressSouth?: string;
+
+  @ApiPropertyOptional()
+  @IsOptional() @IsString()
+  footerDescription?: string;
+
+  @ApiPropertyOptional()
+  @IsOptional() @IsString()
+  footerCopyright?: string;
+
+  @ApiPropertyOptional()
+  @IsOptional() @IsString()
+  footerFanpageUrl?: string;
+
+  @ApiPropertyOptional()
+  @IsOptional() @IsObject()
+  homeConfig?: any;
 }

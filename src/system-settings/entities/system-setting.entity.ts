@@ -35,6 +35,18 @@ export class SystemSetting {
   @Column({ nullable: true })
   feedbackImageUrl: string;
 
+  @Column({ type: 'text', nullable: true })
+  footerDescription: string;
+
+  @Column({ nullable: true })
+  footerCopyright: string;
+
+  @Column({ nullable: true })
+  footerFanpageUrl: string;
+
+  @Column({ type: 'jsonb', nullable: true })
+  homeConfig: any;
+
   @UpdateDateColumn()
   updatedAt: Date;
 }

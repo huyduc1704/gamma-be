@@ -10,6 +10,7 @@ export enum PostType {
   NEWS = 'news',
   KNOWLEDGE = 'knowledge',
   PRICING = 'pricing',
+  ABOUT = 'about',
 }
 
 @Entity('posts')
